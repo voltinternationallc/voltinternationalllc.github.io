@@ -1,0 +1,1360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volt International LLC - Premium Construction Supplies</title>
+    <link rel="icon" href="tool-145375.svg">
+    <meta name="description" content="Volt International LLC provides top-quality construction supplies including cement, lumber, steel, tools, and safety equipment in Glendale, CA.">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <style>
+        :root {
+            --primary: #ff6b00;
+            --primary-dark: #e05e00;
+            --secondary: #2c3e50;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+
+        /* Preloader */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--light);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+
+        .preloader.fade-out {
+            opacity: 0;
+        }
+
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 5px solid var(--gray);
+            border-top: 5px solid var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .handy img {
+            width: 100%;
+            height: 30%;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            background-color: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: var(--secondary);
+            margin: 5px;
+            transition: all 0.3s ease;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('under-construction-2891888.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 2rem;
+        }
+
+        /* Fix for iOS devices */
+            @supports (-webkit-touch-callout: none) {
+                .hero {
+                    background-attachment: scroll !important;
+                }
+            }
+
+        .hero-content {
+            max-width: 800px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(255, 107, 0, 0.4);
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 107, 0, 0.5);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid white;
+            margin-left: 1rem;
+        }
+
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--primary);
+        }
+
+        /* About Section */
+        .section {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--secondary);
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+            color: var(--dark);
+        }
+
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.5s ease;
+        }
+
+        .about-image:hover {
+            transform: scale(1.03);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Services Section */
+        .services {
+            background-color: #f1f3f5;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-img {
+            height: 27rem;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        @media (max-width: 490px) {
+            .service-img {
+                width: 100%;
+                height: 20rem;
+                overflow: hidden;
+             }
+            }
+
+      
+
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .service-card:hover .service-img img {
+            transform: scale(1.1);
+        }
+
+        .service-content {
+            padding: 1.5rem;
+        }
+
+        .service-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+
+        .service-content p {
+            color: var(--gray);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Products Slider */
+        .products .swiper {
+            width: 100%;
+            height: 100%;
+            margin-top: 3rem;
+        }
+
+        .products .swiper-slide {
+            text-align: center;
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .products .swiper-slide:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .products .swiper-slide img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .products .swiper-slide-content {
+            padding: 1.5rem;
+        }
+
+        .products .swiper-slide-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--secondary);
+        }
+
+        .products .swiper-slide-content p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .products .swiper-button-next,
+        .products .swiper-button-prev {
+            color: var(--primary);
+            background: rgba(255, 255, 255, 0.8);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .products .swiper-button-next::after,
+        .products .swiper-button-prev::after {
+            font-size: 1.2rem;
+        }
+
+        /* Why Choose Us */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background-color: rgba(255, 107, 0, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: var(--primary);
+            font-size: 1.8rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+
+        .feature-card p {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: #f1f3f5;
+        }
+
+        .contact-container {
+            display: flex;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--secondary);
+        }
+
+        .contact-info p {
+            margin-bottom: 2rem;
+            line-height: 1.6;
+            color: var(--dark);
+        }
+
+        .contact-details {
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 107, 0, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        .contact-text h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+            color: var(--secondary);
+        }
+
+        .contact-text p, .contact-text a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-text a:hover {
+            color: var(--primary);
+        }
+
+        .contact-form {
+            flex: 1;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--secondary);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.2);
+            outline: none;
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary);
+            color: white;
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+        }
+
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 3px;
+            background: var(--primary);
+            bottom: -8px;
+            left: 0;
+        }
+
+        .footer-col p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+            color: #bdc3c7;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bdc3c7;
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .animate.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-1 {
+            transition-delay: 0.2s;
+        }
+
+        .delay-2 {
+            transition-delay: 0.4s;
+        }
+
+        .delay-3 {
+            transition-delay: 0.6s;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+
+            .contact-container {
+                flex-direction: column;
+            }
+
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.5s ease;
+                z-index: 999;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                margin: 1.5rem 0;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .hamburger.active div:nth-child(1) {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+
+            .hamburger.active div:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active div:nth-child(3) {
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .section {
+                padding: 4rem 1.5rem;
+            }
+
+            .btn-outline {
+                margin-left: 0;
+                margin-top: 1rem;
+                display: block;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .navbar {
+                padding: 1rem;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+            }
+        }
+
+        .swiper-section {
+            height: 42rem;
+            padding-top: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        
+        .swiper-section .logo {
+          justify-content: center;
+          margin-bottom: 1.8rem;
+        }
+    
+        swiper-container {
+            width: 70%;
+            height: 100%;
+        }
+
+        @media (max-width: 576px) { 
+            swiper-container {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+
+    swiper-slide {
+      text-align: center;
+      font-size: 18px;
+  
+    }
+
+    swiper-slide img {
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: 100%;
+      -ms-transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      position: absolute;
+      left: 50%;
+      top: 50%;
+    }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <a href="#" class="logo">Volt<span>International</span></a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#why-us">Why Choose Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Premium Construction Supplies</h1>
+            <p>Your trusted partner for high-quality building materials and tools in Southern California</p>
+            <a href="#contact" class="btn">Get a Quote</a>
+            <a href="#services" class="btn btn-outline">Our Services</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="section-title animate">
+            <h2>About Volt International</h2>
+            <p>We are a leading provider of construction supplies in Glendale, CA, serving contractors and builders with top-quality materials since 2020.</p>
+        </div>
+        <div class="about-content">
+            <div class="about-text animate delay-1">
+                <h3>Building Excellence Since 2020</h3>
+                <p>Volt International LLC has been a trusted name in the construction industry, providing premium building materials to contractors, builders, and DIY enthusiasts across Southern California.</p>
+                <p>Our commitment to quality, reliability, and customer service has made us the go-to supplier for construction projects of all sizes. From small home renovations to large commercial developments, we have the materials and expertise to support your project.</p>
+                <p>With our extensive inventory and knowledgeable staff, we can help you find exactly what you need to complete your project on time and within budget.</p>
+            </div>
+            <div class="about-image animate delay-2">
+                <img src="hammer.jpg" alt="Construction site with materials" >
+            </div>
+        </div>
+    </section>
+    
+    <section class="section swiper-section" id="about">
+
+        <a href="#" class="logo">Volt<span>International</span></a>
+
+  <swiper-container autoplay="true" style="--swiper-navigation-color: #ff6b00; --swiper-pagination-color: #ff6b00" class="mySwiper"
+  pagination="true" pagination-clickable="true" navigation="true">
+  <swiper-slide lazy="true">
+    <img loading="lazy" src="indoors.jpg" />
+  </swiper-slide>
+  <swiper-slide lazy="true">
+    <img loading="lazy" src="cement.jpg" />
+  </swiper-slide>
+  <swiper-slide lazy="true">
+    <img loading="lazy" src="ham.jpg" />
+  </swiper-slide>
+  <swiper-slide lazy="true">
+    <img loading="lazy" src="pile-plastic-safety-hardhats-isolated-white-background_93675-133041.jpg" />
+  </swiper-slide>
+  <swiper-slide lazy="true">
+    <img loading="lazy" src="hammer.jpg" />
+  </swiper-slide>
+  <swiper-slide lazy="true">
+    <img loading="lazy" src="hammerner.jpg" />
+  </swiper-slide>
+  <swiper-slide lazy="true">
+    <img loading="lazy" src="view-steel-hammer-with-other-construction-elements-tools.jpg" />
+  </swiper-slide>
+  <swiper-slide lazy="true">
+    <img loading="lazy" src="constructionham.jpg" />
+  </swiper-slide>
+
+</swiper-container>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+
+    </section>
+
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+
+    <!-- Services Section -->
+    <section class="section services" id="services">
+        <div class="section-title animate">
+            <h2>Our Services</h2>
+            <p>We offer a comprehensive range of construction supplies and services to meet all your building needs.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card animate">
+                <div class="service-img">
+                    <!-- <img src="indoors.jpg" alt="Girl in a jacket" width="500" height="600"> -->
+                    <img loading="lazy" src="indoors.jpg" alt="Cement and concrete supplies">
+                </div>
+                <div class="service-content">
+                    <h3>Cement & Concrete</h3>
+                    <p>High-quality cement, ready-mix concrete, and concrete additives for all your construction needs. We carry all major brands and types for any project specification.</p>
+                    
+                </div>
+            </div>
+            <div class="service-card animate delay-1">
+                <div class="service-img">
+                    <img loading="lazy" src="pile-wood-planks-front-view.jpg" alt="Lumber and wood products" >
+                </div>
+                <div class="service-content">
+                    <h3>Lumber & Wood Products</h3>
+                    <p>Premium lumber, plywood, and engineered wood products for framing, finishing, and all construction applications. Pressure-treated and specialty woods available.</p>
+                    
+                </div>
+            </div>
+            <div class="service-card animate delay-2">
+                <div class="service-img">
+                    <img loading="lazy" src="rebar.jpg" alt="Steel and rebar" >
+                </div>
+                <div class="service-content">
+                    <h3>Steel & Rebar</h3>
+                    <p>Structural steel, rebar, and metal products for reinforced concrete construction. We stock standard sizes and can order custom lengths and specifications.</p>
+                    
+                </div>
+            </div>
+            <div class="service-card animate">
+                <div class="service-img">
+                    <img loading="lazy" src="photo-wall-texture-pattern_58702-14512.jpg" alt="Bricks and masonry" >
+                </div>
+                <div class="service-content">
+                    <h3>Bricks & Masonry</h3>
+                    <p>Wide selection of bricks, blocks, stones, and masonry supplies for beautiful, durable construction. We carry both structural and decorative options.</p>
+                    
+                </div>
+            </div>
+            <div class="service-card animate delay-1">
+                <div class="service-img">
+                    <img loading="lazy" src="tollsandeq.jpg" alt="Construction tools" >
+                </div>
+                <div class="service-content">
+                    <h3>Tools & Equipment</h3>
+                    <p>Professional-grade construction tools and equipment from top brands. Hand tools, power tools, safety gear, and equipment rentals available.</p>
+                    
+                </div>
+            </div>
+            <div class="service-card animate delay-2">
+                <div class="service-img">
+                    <img loading="lazy" src="builder-uniform-wooden-background-flat-lay_169016-24237.jpg" alt="Safety equipment" >
+                </div>
+                <div class="service-content">
+                    <h3>Safety Equipment</h3>
+                    <p>Comprehensive range of safety equipment including helmets, gloves, harnesses, and protective clothing to keep your job site OSHA-compliant and safe.</p>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- section -->
+
+    <!-- Products Section -->
+    <section class="section products" id="products">
+        <div class="section-title animate">
+            <h2>Featured Products</h2>
+            <p>Browse our selection of premium construction supplies and building materials.</p>
+        </div>
+        <div class="swiper products-slider animate delay-1">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img loading="lazy" src="cem.jpg" alt="Portland cement bags" >
+                    <div class="swiper-slide-content">
+                        <h3>Portland Cement</h3>
+                        <p>High-quality Type I, II, and V cement for all construction applications</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img loading="lazy" src="pleasure.jpg" alt="Pressure-treated lumber" >
+                    <div class="swiper-slide-content">
+                        <h3>Pressure-Treated Lumber</h3>
+                        <p>2x4, 2x6, and larger dimensions for framing and outdoor projects</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img loading="lazy" src="iron-rods-474792.jpg" alt="Steel rebar" >
+                    <div class="swiper-slide-content">
+                        <h3>Steel Rebar</h3>
+                        <p>#3 to #11 rebar in various lengths for concrete reinforcement</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img loading="lazy" src="cinder-blocks-lie-ground-dried_661209-369.jpg" alt="Concrete blocks" >
+                    <div class="swiper-slide-content">
+                        <h3>Concrete Blocks</h3>
+                        <p>Standard and decorative concrete blocks for masonry construction</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img loading="lazy" src="tollsandeq.jpg" alt="Construction tools" >
+                    <div class="swiper-slide-content">
+                        <h3>Professional Tools</h3>
+                        <p>Hammers, saws, levels, and other essential construction tools</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img loading="lazy" src="pile-plastic-safety-hardhats-isolated-white-background_93675-133041.jpg" alt="Safety helmets" >
+                    <div class="swiper-slide-content">
+                        <h3>Safety Helmets</h3>
+                        <p>OSHA-approved hard hats in various colors and styles</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img loading="lazy" src="measuringillustration_24908-54775.jpg" alt="Measuring tapes" >
+                    <div class="swiper-slide-content">
+                        <h3>Measuring Tapes</h3>
+                        <p>Professional-grade 25' and 100' measuring tapes</p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="section" id="why-us">
+        <div class="handy">
+            <img loading="lazy" src="handyman-3094035.jpg" alt="">
+        </div>
+     
+        <div class="section-title animate">
+            <h2>Why Choose Volt International</h2>
+            <p>We go above and beyond to provide exceptional service and quality products.</p>
+        </div>
+        <div class="features">
+            <div class="feature-card animate">
+                <div class="feature-icon">
+                    <i>✓</i>
+                </div>
+                <h3>Quality Materials</h3>
+                <p>We source only the highest quality materials from trusted manufacturers to ensure your projects are built to last.</p>
+            </div>
+            <div class="feature-card animate delay-1">
+                <div class="feature-icon">
+                    <i>🏭</i>
+                </div>
+                <h3>Extensive Inventory</h3>
+                <p>Our large warehouse keeps a wide variety of products in stock, ready for immediate pickup or delivery.</p>
+            </div>
+            <div class="feature-card animate delay-2">
+                <div class="feature-icon">
+                    <i>🚚</i>
+                </div>
+                <h3>Fast Delivery</h3>
+                <p>We offer prompt delivery services throughout Southern California to keep your project on schedule.</p>
+            </div>
+            <div class="feature-card animate">
+                <div class="feature-icon">
+                    <i>👷</i>
+                </div>
+                <h3>Expert Advice</h3>
+                <p>Our knowledgeable staff can help you select the right materials and provide technical support.</p>
+            </div>
+            <div class="feature-card animate delay-1">
+                <div class="feature-icon">
+                    <i>💰</i>
+                </div>
+                <h3>Competitive Pricing</h3>
+                <p>We offer fair, transparent pricing and volume discounts for large projects.</p>
+            </div>
+            <div class="feature-card animate delay-2">
+                <div class="feature-icon">
+                    <i>⭐</i>
+                </div>
+                <h3>Customer Satisfaction</h3>
+                <p>Your satisfaction is our priority. We stand behind our products and services 100%.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="handy">
+            <img loading="lazy" src="plan.jpg" alt="">
+        </div>
+       
+        <div class="section-title animate">
+            <h2>Contact Us</h2>
+            <p>Get in touch with our team for quotes, product information, or any questions.</p>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info animate delay-1">
+                <h3>Let's Build Something Together</h3>
+                <p>Whether you're a contractor, builder, or DIY enthusiast, we're here to provide the materials and support you need for your next project.</p>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i>📍</i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Address</h4>
+                            <p>104 S Glendale Ave, unit 203<br>Glendale, CA 91205</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i>📞</i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Phone</h4>
+                            <p><a href="tel:74727170244">(747) 2717-0244</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i>✉️</i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Email</h4>
+                            <p><a href="mailto:voltinternational777@gmail.com">voltinternational777@gmail.com</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form animate delay-2">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" class="form-control" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Volt International</h3>
+                <p>Your trusted source for premium construction supplies in Southern California since 2020.</p>
+                <div class="social-links">
+                    <a href="#"><i>📱</i></a>
+                    <a href="#"><i>💻</i></a>
+                    <a href="#"><i>📸</i></a>
+                    <a href="#"><i>🔗</i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Services</h3>
+                <ul class="footer-links">
+                    <li><a href="#services">Cement & Concrete</a></li>
+                    <li><a href="#services">Lumber & Wood</a></li>
+                    <li><a href="#services">Steel & Rebar</a></li>
+                    <li><a href="#services">Bricks & Masonry</a></li>
+                    <li><a href="#services">Tools & Equipment</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Info</h3>
+                <p>104 S Glendale Ave, unit 203<br>Glendale, CA 91205</p>
+                <p><a href="tel:74727170244">(747) 2717-0244</a></p>
+                <p><a href="mailto:voltinternational777@gmail.com">voltinternational777@gmail.com</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2020 Volt International LLC. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        // Preloader
+        window.addEventListener('load', function() {
+            const preloader = document.querySelector('.preloader');
+            setTimeout(() => {
+                preloader.classList.add('fade-out');
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                }, 500);
+            }, 1000);
+        });
+
+        // Mobile Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            header.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Initialize Swiper
+        const swiper = new Swiper('.products-slider', {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            loop: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                },
+                992: {
+                    slidesPerView: 3,
+                },
+            }
+        });
+
+        // Scroll animation
+        const animateElements = document.querySelectorAll('.animate');
+
+        function checkScroll() {
+            animateElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('show');
+                }
+            });
+        }
+
+        // Check on initial load
+        checkScroll();
+
+        // Check on scroll
+        window.addEventListener('scroll', checkScroll);
+
+        // Form submission
+        const contactForm = document.getElementById('contactForm');
+        
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            
+            // Here you would typically send the form data to a server
+            // For this example, we'll just show an alert
+            alert(`Thank you, ${name}! Your message about "${subject}" has been received. We'll contact you at ${email} shortly.`);
+            
+            // Reset form
+            contactForm.reset();
+        });
+
+        // Lazy loading for images
+        if ('loading' in HTMLImageElement.prototype) {
+            const images = document.querySelectorAll('img[]');
+            images.forEach(img => {
+                img.src = img.dataset.src;
+            });
+        } else {
+            // Fallback for browsers that don't support lazy loading
+            const script = document.createElement('script');
+            script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js';
+            document.body.appendChild(script);
+        }
+    </script>
+</body>
+</html> 
