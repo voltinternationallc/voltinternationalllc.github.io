@@ -837,6 +837,27 @@
       left: 50%;
       top: 50%;
     }
+
+         .accordion {
+      margin-top: 20px;
+    }
+    .accordion-item {
+      border-top: 1px solid #ccc;
+    }
+    .accordion-header {
+      padding: 15px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .accordion-body {
+      padding: 15px;
+      display: none;
+      background: #fff;
+    }
+    .accordion-item.active .accordion-body {
+      display: block;
+    } 
+
     </style>
 </head>
 <body>
@@ -1212,6 +1233,54 @@
             </div>
         </div>
     </section>
+
+    <section class="container" id="privacy">
+        <h2 style="text-align: center;" class="aheader">Privacy Policy & Terms</h2>
+        <div class="accordion">
+          <div class="accordion-item">
+            <div class="accordion-header">1. Data Collection</div>
+            <div class="accordion-body">
+              We collect only the minimum data necessary to provide and improve our services, such as usage patterns and basic user information.
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header">2. Data Usage</div>
+            <div class="accordion-body">
+              Your data is used strictly for service improvements, personalization, and support. We do not sell or share your information without consent.
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header">3. Data Security</div>
+            <div class="accordion-body">
+              We use industry-standard security measures, including SSL encryption, firewalls, and secure storage, to protect your personal information.
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header">4. User Rights</div>
+            <div class="accordion-body">
+              You have the right to access, update, or delete your data at any time. Contact support to request account or data changes.
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header">5. Terms of Use</div>
+            <div class="accordion-body">
+              By using our services, you agree to comply with our terms of use and privacy practices outlined in this policy.
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+  <script>
+        const allHeaders = document.querySelectorAll('.accordion-header');
+        allHeaders.forEach(header => {
+          header.addEventListener('click', () => {
+            const item = header.parentElement;
+            item.classList.toggle('active');
+          });
+        });
+      </script>
 
     <!-- Contact Section -->
     <section class="section contact" id="contact">
